@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calculadora R1 e DAP</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <header>
+
+            <h1>Calculadora R1 + DAP</h1>
+
+            <p>
+                Digite apenas P.S e P.M.
+                Os resultados são calculados automaticamente.
+            </p>
+
+        </header>
+
+
+        <section class="formulas">
+
+            <div>
+                <strong>R1:</strong>
+                P.M × 0,9901 − P.S
+            </div>
+
+            <div>
+                <strong>DAP:</strong>
+                P.S × 0,9982
+            </div>
+
+        </section>
+
+
+        <div class="actions">
+
+            <button id="addPeca">
+                + Adicionar peça
+            </button>
+
+            <button id="limpar">
+                Limpar tudo
+            </button>
+
+            <button id="imprimir">
+                Imprimir ficha
+            </button>
+
+        </div>
+
+
+        <div id="tabelas"></div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

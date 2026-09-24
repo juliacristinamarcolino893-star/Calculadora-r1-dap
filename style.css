@@ -1,0 +1,349 @@
+* {
+
+    box-sizing: border-box;
+
+}
+
+
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #f3f4f6;
+
+    color: #222;
+
+}
+
+
+
+.container {
+
+    max-width: 1200px;
+
+    margin: 25px auto;
+
+    padding: 20px;
+
+}
+
+
+
+header {
+
+    background: white;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+h1 {
+
+    margin-top: 0;
+
+}
+
+
+
+.formulas {
+
+    background: #fff8dc;
+
+    border: 1px solid #e4d38a;
+
+    padding: 14px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    gap: 30px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+.actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+button {
+
+    border: 0;
+
+    padding: 11px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: #222;
+
+    color: white;
+
+    font-size: 15px;
+
+}
+
+
+
+button:hover {
+
+    opacity: 0.85;
+
+}
+
+
+
+.peca {
+
+    background: white;
+
+    margin-bottom: 20px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    overflow-x: auto;
+
+}
+
+
+
+.peca h2 {
+
+    margin: 0 0 10px;
+
+}
+
+
+
+table {
+
+    border-collapse: collapse;
+
+    min-width: 1000px;
+
+    width: 100%;
+
+}
+
+
+
+th,
+
+td {
+
+    border: 1px solid #555;
+
+    padding: 7px;
+
+    text-align: center;
+
+}
+
+
+
+th {
+
+    background: #e8edf3;
+
+}
+
+
+
+td input {
+
+    width: 75px;
+
+    padding: 7px;
+
+    text-align: center;
+
+    border: 1px solid #aaa;
+
+    border-radius: 5px;
+
+}
+
+
+
+.resultado {
+
+    background: #e5f4e1;
+
+    font-weight: bold;
+
+}
+
+
+
+.rodape {
+
+    margin-top: 10px;
+
+    font-size: 13px;
+
+    color: #555;
+
+}
+
+
+
+
+
+/* ================================= */
+/*         CONFIGURAÇÃO IMPRESSÃO    */
+/* ================================= */
+
+@media print {
+
+    @page {
+        size: A4 landscape;
+        margin: 5mm;
+    }
+
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: white;
+    }
+
+    /* Esconde cabeçalho, fórmulas e botões */
+    header,
+    .formulas,
+    .actions {
+        display: none !important;
+    }
+
+    .container {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Área das peças */
+    #tabelas {
+        width: 100%;
+        min-height: 195mm;
+
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Cada peça */
+    .peca {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+
+        background: white;
+        border-radius: 0;
+
+        overflow: visible;
+
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    /* Título Peça 1, Peça 2, Peça 3 */
+    .peca h2 {
+        margin: 1mm 0 1mm 0;
+        padding: 0;
+
+        font-size: 12px;
+        line-height: 1;
+    }
+
+    /* Tabela */
+    .peca table {
+        width: 100%;
+        min-width: 0;
+
+        table-layout: fixed;
+        border-collapse: collapse;
+
+        margin: 0;
+    }
+
+    /* Células */
+    .peca th,
+    .peca td {
+        border: 1px solid #555;
+
+        padding: 2px;
+
+        font-size: 9px;
+
+        height: 7mm;
+
+        text-align: center;
+    }
+
+    /* Cabeçalho das colunas */
+    .peca th {
+        background: #e8edf3 !important;
+        font-weight: bold;
+    }
+
+    /* Campos PS e PM */
+    .peca td input {
+        width: 100%;
+        height: 6mm;
+
+        padding: 0;
+
+        margin: 0;
+
+        border: 0 !important;
+        border-radius: 0;
+
+        font-size: 9px;
+
+        text-align: center;
+        background: white;
+    }
+
+    /* R1 e DAP */
+    .peca .resultado {
+        font-size: 9px;
+        font-weight: bold;
+    }
+
+    /* Não imprime os textos das fórmulas */
+    .rodape {
+        display: none !important;
+    }
+}
